@@ -32,7 +32,7 @@ func (v V[T]) Add(n V[T]) (r V[T]) {
 	}
 }
 
-// Sub performs vector substraction.
+// Sub performs vector subtraction.
 func (v V[T]) Sub(n V[T]) (r V[T]) {
 	return V[T]{
 		X: v.X - n.X,
