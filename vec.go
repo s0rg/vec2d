@@ -79,7 +79,7 @@ func (v V[T]) Len() (r T) {
 
 // Norm calculates normal vector.
 func (v V[T]) Norm() (r V[T]) {
-	return v.DivScalar(T(v.Len()))
+	return v.DivScalar(v.Len())
 }
 
 // Dot calculates dot-product.

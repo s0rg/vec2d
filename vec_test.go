@@ -9,7 +9,6 @@ func TestAdd(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(10, 10), New(90, 90)
-
 	v3 := v1.Add(v2)
 
 	if v3.X != 100 || v3.Y != 100 {
@@ -21,7 +20,6 @@ func TestSub(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(100, 100), New(90, 90)
-
 	v3 := v1.Sub(v2)
 
 	if v3.X != 10 || v3.Y != 10 {
@@ -33,7 +31,6 @@ func TestMul(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(2, 50), New(50, 2)
-
 	v3 := v1.Mul(v2)
 
 	if v3.X != 100 || v3.Y != 100 {
@@ -55,7 +52,6 @@ func TestDiv(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(100, 100), New(50, 2)
-
 	v3 := v1.Div(v2)
 
 	if v3.X != 2 || v3.Y != 50 {
@@ -77,7 +73,6 @@ func TestMin(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(100, 1), New(1, 100)
-
 	v3 := v1.Min(v2)
 
 	if v3.X != 1 || v3.Y != 1 {
@@ -89,7 +84,6 @@ func TestMax(t *testing.T) {
 	t.Parallel()
 
 	v1, v2 := New(100, 1), New(1, 100)
-
 	v3 := v1.Max(v2)
 
 	if v3.X != 100 || v3.Y != 100 {
@@ -142,9 +136,7 @@ func TestCross(t *testing.T) {
 
 	v1, v2 := New(10, 5), New(5, 5)
 
-	v := v1.Cross(v2)
-
-	if v != 25 {
+	if v1.Cross(v2) != 25 {
 		t.Fail()
 	}
 }
@@ -154,9 +146,7 @@ func TestDot(t *testing.T) {
 
 	v1, v2 := New(10, 5), New(5, 5)
 
-	v := v1.Dot(v2)
-
-	if v != 75 {
+	if v1.Dot(v2) != 75 {
 		t.Fail()
 	}
 }
@@ -165,9 +155,8 @@ func TestLen(t *testing.T) {
 	t.Parallel()
 
 	v1 := New(10, 5)
-	v := v1.Len()
 
-	if v != 11 {
+	if v1.Len() != 11 {
 		t.Fail()
 	}
 }
