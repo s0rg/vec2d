@@ -1,6 +1,7 @@
 package vec2d
 
 import (
+	"math"
 	"strings"
 	"testing"
 )
@@ -179,5 +180,48 @@ func TestString(t *testing.T) {
 
 	if !strings.ContainsAny(v, "015") {
 		t.Fail()
+	}
+}
+
+func TestEquals(t *testing.T) {
+	t.Parallel()
+
+	v1 := New(0.0, 10.0)
+	v2 := v1
+	v3 := New(1.0, 5.0)
+
+	if !v2.Equal(v1) {
+		t.Fail()
+	}
+
+	if v3.Equal(v1) {
+		t.Fail()
+	}
+}
+
+func TestPerpendicular(t *testing.T) {
+	t.Parallel()
+
+	v1 := New(0, 10).Perpendicular()
+
+	if v1.X != -10 || v1.Y != 0 {
+		t.Fail()
+	}
+}
+
+func TestRotation(t *testing.T) {
+	t.Parallel()
+
+	v1 := New(5.0, 0.0)
+
+	const epsilon = 0.00000000000001
+
+	angles := []float64{math.Pi / 8, math.Pi / 6, math.Pi / 4, math.Pi / 3}
+	for _, a := range angles {
+		v2 := v1.Rotate(a)
+
+		if r := v2.Angle(); math.Abs(r-a) > epsilon {
+			t.Fatalf("rotate(%f) == %f", a, r)
+		}
 	}
 }
