@@ -12,3 +12,8 @@
 # vec2d
 
 generic 2D vector for golang
+
+# fetures
+
+- includes all common vector operations
+- 100% test coverage
