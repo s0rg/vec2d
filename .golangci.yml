@@ -11,10 +11,9 @@ output:
 linters:
   enable-all: true
   disable:
-    #- gochecknoglobals
     - nonamedreturns
-    - testpackage
     - varnamelen
+    - depguard
     - ireturn
 
 linters-settings:
