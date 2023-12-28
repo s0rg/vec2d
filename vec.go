@@ -74,7 +74,12 @@ func (v V[T]) DivScalar(n T) V[T] {
 
 // Len calculates length of vector.
 func (v V[T]) Len() T {
-	return T(math.Sqrt(float64(v.X*v.X + v.Y*v.Y)))
+	return T(math.Sqrt(float64(v.LenSquared())))
+}
+
+// LenSquared same as Len(), but without sqrt.
+func (v V[T]) LenSquared() T {
+	return v.X*v.X + v.Y*v.Y
 }
 
 // Norm calculates normal vector.
@@ -95,16 +100,16 @@ func (v V[T]) Cross(n V[T]) T {
 // Min returns minimum of two vectors.
 func (v V[T]) Min(n V[T]) V[T] {
 	return V[T]{
-		X: T(math.Min(float64(v.X), float64(n.X))),
-		Y: T(math.Min(float64(v.Y), float64(n.Y))),
+		X: min(v.X, n.X),
+		Y: min(v.Y, n.Y),
 	}
 }
 
 // Max returns maximum of two vectors.
 func (v V[T]) Max(n V[T]) V[T] {
 	return V[T]{
-		X: T(math.Max(float64(v.X), float64(n.X))),
-		Y: T(math.Max(float64(v.Y), float64(n.Y))),
+		X: max(v.X, n.X),
+		Y: max(v.Y, n.Y),
 	}
 }
 
@@ -145,6 +150,11 @@ func (v V[T]) Equal(n V[T]) bool {
 	return v.X == n.X && v.Y == n.Y
 }
 
+// IsZero return true if vector has both coordinates equal to zero.
+func (v V[T]) IsZero() bool {
+	return v.X == T(0) && v.Y == T(0)
+}
+
 // Perpendicular returns the perpendicular/normal vector.
 func (v V[T]) Perpendicular() V[T] {
 	return V[T]{
@@ -158,7 +168,7 @@ func (v V[T]) Angle() float64 {
 	return math.Atan2(float64(v.Y), float64(v.X))
 }
 
-// Rotate rotates the vector by the given angle.
+// Rotate returns vector rotated by the given angle in radians.
 func (v V[T]) Rotate(angle float64) V[T] {
 	sin, cos := math.Sincos(angle)
 	fx, fy := float64(v.X), float64(v.Y)
