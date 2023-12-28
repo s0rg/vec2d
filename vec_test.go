@@ -227,3 +227,13 @@ func TestRotation(t *testing.T) {
 		}
 	}
 }
+
+func TestIsZero(t *testing.T) {
+	t.Parallel()
+
+	v := vec2d.New(0, 0)
+
+	if !v.IsZero() {
+		t.Fail()
+	}
+}
