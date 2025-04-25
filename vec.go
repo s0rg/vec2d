@@ -92,9 +92,17 @@ func (v V[T]) Dot(n V[T]) T {
 	return v.X*n.X + v.Y*n.Y
 }
 
-// Cross calculates cross-product.
+// Cross calculates cross-product between two vectors.
 func (v V[T]) Cross(n V[T]) T {
 	return v.X*n.X - v.Y*n.Y
+}
+
+// Cross calculates cross-product between vector and scalar.
+func (v V[T]) CrossScalar(n T) V[T] {
+	return V[T]{
+		X: n * v.Y,
+		Y: -n * v.X,
+	}
 }
 
 // Min returns minimum of two vectors.
