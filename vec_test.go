@@ -237,3 +237,13 @@ func TestIsZero(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestCrossScalar(t *testing.T) {
+	t.Parallel()
+
+	v1, v2 := vec2d.New(10, 5), vec2d.New(25, -50)
+
+	if !v1.CrossScalar(5).Equal(v2) {
+		t.Fail()
+	}
+}

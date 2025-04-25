@@ -1,5 +1,7 @@
 module github.com/s0rg/vec2d
 
-go 1.21.5
+go 1.24
 
-require golang.org/x/exp v0.0.0-20231226003508-02704c960a9b
+toolchain go1.24.2
+
+require golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0

@@ -5,8 +5,8 @@
 
 [![CI](https://github.com/s0rg/vec2d/workflows/ci/badge.svg)](https://github.com/s0rg/vec2d/actions?query=workflow%3Aci)
 [![Go Report Card](https://goreportcard.com/badge/github.com/s0rg/vec2d)](https://goreportcard.com/report/github.com/s0rg/vec2d)
-[![Maintainability](https://api.codeclimate.com/v1/badges/e1a581d2250a2db9c0c3/maintainability)](https://codeclimate.com/github/s0rg/vec2d/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e1a581d2250a2db9c0c3/test_coverage)](https://codeclimate.com/github/s0rg/vec2d/test_coverage)
+[![Maintainability](https://qlty.sh/badges/86383cb7-a871-4bd9-a10c-93752067c8ba/maintainability.svg)](https://qlty.sh/gh/s0rg/projects/vec2d)
+[![Code Coverage](https://qlty.sh/badges/86383cb7-a871-4bd9-a10c-93752067c8ba/test_coverage.svg)](https://qlty.sh/gh/s0rg/projects/vec2d)
 ![Issues](https://img.shields.io/github/issues/s0rg/vec2d)
 
 # vec2d
